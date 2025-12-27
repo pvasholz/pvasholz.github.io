@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Portfolio of Paul Vasholz — HCI student and former political philosopher focusing on UX research, information architecture, and interaction design.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasholz Portfolio</title>
+
+  <!-- Bootstrap (optional; keeps your grid/JS) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Your new custom stylesheet (pulls in Montserrat + all Figma styling) -->
+  <link rel="stylesheet" href="portstyle.css" />
+  <!-- menu.js (your existing JS toggler; unchanged) -->
+  <script src="menu.js" defer></script>
+</head>
+
+<body onresize="showBrowserSize();" onload="showBrowserSize();">
+  <div id="main">
+    <!-- =======================
+         NAVIGATION
+         ======================= -->
+    <nav class="site-nav">
+      <div class="container-fluid">
+        <!-- Logo on the left -->
+        <a href="portfolio.html" class="site-logo">
+          <img
+            src="images/logo13.png"
+            alt="Logo"
+          />
+        </a>
+
+        <!-- "Hamburger" icon for mobile, triggered by menu.js -->
+        <span class="icon" onclick="toggleMenu()">☰</span>
+
+        <!-- Nav links on the right -->
+        <ul class="nav-links">
+          <li>
+            <a href="portfolio.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="projects.html" class="nav-link active">Projects</a>
+          </li>
+          <li>
+            <a href="education.html" class="nav-link">Resume</a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <article>
+      <section class="container text-center" style="padding: 2rem 0;">
+        <h1>Projects</h1>
+      </section>
+
+      <div class="container pb-4">
+        <!-- Row 1: AI Research + UX Case Study -->
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/ariel_card.jpg" alt="Parking garage" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">Ariel Project</h3>
+                <p class="card__text">
+                  Independent research testing epistemic restraint in large language models. I examined whether AI can hold moral tension without defaulting to closure, using constraint-based prompting across philosophy and comedy texts.
+                </p>
+                <a
+                  href="ariel.html"
+                  class="button"
+                >
+                  View Case Study
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="mb1.png" alt="SilentAid moodboard" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">SilentAid UX Case Study</h3>
+                <p class="card__text">
+                  Graduate UX project designing a discreet phone + watch safety tool for domestic violence situations. Includes research insights, prototyping process, and hi-fi design updates.
+                </p>
+                <a
+                  href="silentAid.html"
+                  class="button"
+                >
+                  View Case Study
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/research1.png" alt="brain" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">Free Will Dissertation</h3>
+                <p class="card__text">
+                  Doctoral research on free will at the intersection of neuroscience and political philosophy. I examined how cognitive and neural constraints shape responsibility, agency, and moral judgment in political contexts.
+                </p>
+                <a
+                  href="https://drive.google.com/file/d/1OL1QCnX-K8wj1zN0NnLBgMPDfb8cwB5u/view?usp=sharing"
+                  class="button"
+                  target="_blank"
+                >
+                  Read PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Data/Research Projects -->
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/data2.png" alt="Map of Data Breaches" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">US Health Care Data Breaches</h3>
+                <p class="card__text">
+                  Group project using R and Tableau to visualize data breaches affecting U.S. health care organizations. I helped clean the data, explore trends, and design visualizations that made patterns in breach type and scale easier to understand.
+                </p>
+                <a
+                  href="https://docs.google.com/document/d/16sbGwAvra_R2WLquJ5EawWpkQdy4PbIhoySBRalfab0/edit?usp=sharing"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/research2.png" alt="chart" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">2016 Twitter Analysis</h3>
+                <p class="card__text">
+                  Python-based analysis of 2016 Democratic primary candidates' tweets. I collected and processed tweet data to explore patterns in messaging, tone, and engagement across candidates.
+                </p>
+                <a
+                  href="https://docs.google.com/document/d/…"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/python.png" alt="chart" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">May 2019 Box Office Predictions</h3>
+                <p class="card__text">
+                  A machine learning project predicting U.S. opening-week box office grosses in May 2019. I used and evaluated Python models to relate features like budget and genre to expected performance.
+                </p>
+                <a
+                  href="https://drive.google.com/file/d/179RBUBlIIBvrS9cxOmfO_rbRbAnu_2P8/view?usp=sharing"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Usability/UX Research -->
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/usetest.png" alt="chart" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">Usability Testing Project</h3>
+                <p class="card__text">
+                  Group usability study of the <a href="https://www.lookkle.com/">Lookkle web analytics website</a>. I helped plan test tasks, observe sessions, and synthesize findings into recommendations to improve clarity and navigation.
+                </p>
+                <a
+                  href="images/usetest.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/boat.png" alt="sailboat" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">Usability Evaluation</h3>
+                <p class="card__text">
+                  Group usability evaluation of the Yacht Scoring race registration interface. I contributed to task design, user observation, and analysis of where participants struggled, leading to suggestions for a clearer registration flow.
+                </p>
+                <a
+                  href="images/sailtest.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/health.png" alt="health supplements" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">User Observation</h3>
+                <p class="card__text">
+                  Group study observing how users fact-check online information about health supplements. I helped define observation protocols, take notes, and summarize behaviors and strategies people used to decide what to trust.
+                </p>
+                <a
+                  href="images/health.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  View Report
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4: Design Projects -->
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/figma.png" alt="Design system preview" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">Figma Mini Design System</h3>
+                <p class="card__text">
+                  A mini design system created in Figma, including core components, typography, and a color palette. I defined the styles and component library and then adapted this system as the basis for the visual design of this portfolio.
+                </p>
+                <a
+                  href="https://studentweb.cdm.depaul.edu/pvasholz/HCI472/pavDS/index.html"
+                  class="button"
+                  target="_blank"
+                >
+                  View Website
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <img src="images/pizza1.jpg" alt="Sausage Pizza" class="card__image" />
+              <div class="card__content">
+                <h3 class="card__title">E-Learning System</h3>
+                <p class="card__text">
+                  A simple web-based e-learning system to teach basic pizza-making skills. I designed the structure, wrote the instructional content, and built the interface, focusing on clear navigation and short, focused lessons.
+                </p>
+                <a
+                  href="https://studentweb.cdm.depaul.edu/pvasholz/pizza/index.html"
+                  class="button"
+                  target="_blank"
+                >
+                  View Website
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <p>© Paul Vasholz | Last Update December 2025</p>
+    </footer>
+
+  </div> <!-- end of main -->
+
+  <div id="sizeInfo"></div>
+</body>
+</html>

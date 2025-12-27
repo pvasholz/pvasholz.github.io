@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Portfolio of Paul Vasholz — HCI student and former political philosopher focusing on UX research, information architecture, and interaction design.">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasholz Portfolio</title>
+
+  <!-- Bootstrap (optional; keeps your grid/JS) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Your new custom stylesheet (pulls in Montserrat + all Figma styling) -->
+  <link rel="stylesheet" href="portstyle.css" />
+  <!-- menu.js (your existing JS toggler; unchanged) -->
+  <script src="menu.js" defer></script>
+</head>
+
+<body onresize="showBrowserSize();" onload="showBrowserSize();">
+  <div id="main">
+    <!-- =======================
+         NAVIGATION
+         ======================= -->
+    <nav class="site-nav">
+      <div class="container-fluid">
+        <!-- Logo on the left -->
+        <a href="portfolio.html" class="site-logo">
+          <img
+            src="images/logo13.png"
+            alt="Logo"
+          />
+        </a>
+
+        <!-- "Hamburger" icon for mobile, triggered by menu.js -->
+        <span class="icon" onclick="toggleMenu()">☰</span>
+
+        <!-- Nav links on the right -->
+        <ul class="nav-links">
+          <li>
+            <a href="portfolio.html" class="nav-link active">Home</a>
+          </li>
+          <li>
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="education.html" class="nav-link">Resume</a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- =======================
+         MAIN CONTENT
+         ======================= -->
+    <article>
+      <section class="container text-center" style="padding: 4rem 0;">
+        <h1>Vasholz Portfolio</h1>
+        <p>I'm Paul Vasholz, an HCI student at DePaul University with a background in political philosophy.
+I focus on UX research, information architecture, and interaction design.</p>
+      </section>
+
+      <!-- DEMO "Selected Projects" GRID (replace or remove if you like) -->
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <img src="images/ariel_card.jpg" alt="Parking garage" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Ariel Project</h3>
+              <p class="card__text">
+                Independent research testing epistemic restraint in large language models. I examined whether AI can hold moral tension without defaulting to closure, using constraint-based prompting across philosophy and comedy texts.
+              </p>
+              <a
+                href="ariel.html"
+                class="button"
+              >
+                View Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <img src="images/boat.png" alt="sailboat" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Usability Evaluation</h3>
+              <p class="card__text">
+                This group project looked at how users interacted with the Yacht Scoring website when trying to register for races.
+              </p>
+              <a
+                href="images/sailtest.pdf"
+                class="button"
+                target="_blank"
+              >
+                View Report
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <img src="mb1.png" alt="SilentAid moodboard" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">SilentAid UX Case Study</h3>
+              <p class="card__text">
+                Graduate UX project designing a discreet phone + watch safety tool for domestic violence situations. Includes research insights, prototyping process, and hi-fi design updates.
+              </p>
+              <a
+                href="silentAid.html"
+                class="button"
+              >
+                View Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat for additional cards… -->
+      </div>
+    </article>
+
+    <!-- =======================
+         FOOTER
+         ======================= -->
+    <footer class="site-footer">
+      <p>© Paul Vasholz | Last Update December 2025</p>
+    </footer>
+  </div>
+
+  <div id="sizeInfo"></div>
+</body>
+</html>

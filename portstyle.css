@@ -1,0 +1,673 @@
+/* ===================================================================
+   1. DEFINE FONTS & COLOR VARIABLES (from Vasholz HCI 472.pdf)
+   =================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  /* Figma Project Colors */
+  --color-dark:  #2B2B2B;
+  --color-blue:  #29687B;
+  --color-gold:  #99693A;
+  --color-brown: #5E4934;
+  --color-white: #FFFFFF;
+}
+
+/* ===================================================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   =================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* 1rem = 16px */
+  line-height: 1.5;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.resume-wrapper {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-width: 900px; /* ← limits its width */
+}
+
+/* HEADINGS (weight 400, exact Figma sizes) */
+h1 {
+  font-size: 54px;    /* calmer desktop size */
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+/* BODY TEXT */
+p {
+  font-size: 16px; /* 1rem */
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+strong,
+b {
+  font-weight: 700; /* Montserrat Bold */
+}
+
+em,
+.emphasized {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* LINKS */
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ===================================================================
+   3. NAVIGATION BAR
+   =================================================================== */
+/* Container for entire nav */
+.site-nav {
+  background-color: var(--color-dark);
+  padding: 0rem 0;
+  position: relative;
+  z-index: 999;
+  
+}
+
+.site-nav .container-fluid {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Centered wrapper (if you want a fixed max‐width) */
+.site-nav .container, .site-nav .container-fluid {
+  
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Logo (left side) */
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 30px; /* adjust if Figma specified different */
+}
+
+.site-nav .nav-links {
+  display: flex;
+  flex: 1;   
+  margin-left: auto;                      /* take up all leftover width */
+  justify-content: space-evenly;   /* or use space-between if you prefer links flush at edges */
+  align-items: center;
+  list-style: none;
+  padding-top: 0.75rem;    /* ↑ increases space above the links */
+  padding-bottom: 0rem;/* ↓ keeps the bar from growing too much */
+}
+
+/* Remove gap or margin‑based spacing on <li>—the UL’s justify-content handles it now */
+.site-nav .nav-links li {
+  margin: 0;
+}
+
+/* Nav‑link styles remain the same */
+.site-nav a.nav-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-white);
+  padding: 0.25rem 0.5rem;
+}
+
+.site-nav a.nav-link:hover,
+.site-nav a.nav-link:focus {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.site-nav a.nav-link.active {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+
+.site-nav .icon {
+  display: none;
+  font-size: 24px;
+  color: var(--color-white);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ─── MEDIA QUERY (small screens) ───────────────────────────────── */
+@media (max-width: 768px) {
+  /* 1) Hide the nav‐links UL (so only the icon is visible) */
+  .site-nav .nav-links {
+    display: none;
+  }
+
+
+  /* 2) Show the hamburger icon on the right */
+  .site-nav .icon {
+    display: block;
+    margin-left: auto; /* push the icon all the way right */
+    
+  }
+  .site-nav.responsive .nav-links {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+  /* 3) When nav has class="responsive", show UL as a horizontal row to the LEFT of the icon */
+  .site-nav.responsive .nav-links {
+    display: flex;
+    flex-direction: column;     /* horizontal row of items */
+    align-items: center;     /* vertical center inside the nav bar */
+    position: absolute;      /* position it relative to .container */
+    top: 0;                  /* align top of UL to top of container */
+    right: 0;             /* move UL to the left of the icon (≈ icon width) */
+    background-color: var(--color-dark);
+    /* optional: add a small box‐shadow so the expanded menu stands out */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  /* 4) Make each <li> auto‐size to its label, with a bit of horizontal margin */
+  .site-nav.responsive .nav-links li {
+    margin: 0 0.5rem;   /* 0.5rem left/right space between items */
+    display: flex;
+    align-items: center;
+  }
+
+  /* 5) Increase tappable area on mobile links */
+  .site-nav.responsive a.nav-link {
+    padding: 0.5rem 0.5rem; /* larger tap/click area */
+    font-size: 16px;       /* keep font consistent */
+    color: var(--color-white);
+  }
+  .site-nav.responsive::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 998;
+  }
+
+  .site-nav.responsive .nav-links {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;  /* ghost—overlay is from ::before */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;             /* above the overlay */
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav.responsive .nav-links li {
+    margin: 1rem 0;
+  }
+  .site-nav.responsive .nav-links a.nav-link {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    padding: 0.5rem 0;
+  }
+
+/* ===================================================================
+   4. BUTTONS
+   =================================================================== */
+.button {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  padding: 0.75rem 1.5rem; /* ≈12px × 24px */
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-brown);
+  border-color: var(--color-brown);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background-color: var(--color-blue);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-dark);
+}
+
+/* ===================================================================
+   5. CARDS / PROJECT PREVIEWS
+   =================================================================== */
+/* ──────────────────────────────────────────────────────────────
+   UPDATE: CARD STYLING TO MATCH FIGMA DESIGN
+   ────────────────────────────────────────────────────────────── */
+
+/* 1. Make the image a fixed (smaller) height and crop it */
+.card__image {
+  width: 100%;
+  height: 300px;           /* ↓ adjust this to your Figma height (e.g. 160px) */
+  object-fit: cover;       /* crops/centers the image within that box */
+  border: 1px solid rgba(94, 73, 52, 0.3);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+/* 2. Refine the overall card container */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-brown);
+  border-radius: 12px;     /* ↑ larger radius to match Figma’s rounded corners */
+  overflow: hidden;        /* ensures border-radius clips the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* ↑ a bit stronger shadow */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease-in-out;
+  max-width: 500px; /* ↑ set a max-width to match Figma’s card width */
+  margin: 0 auto;
+  
+}
+
+/* 3. Add a hover “lift” effect (very common in Figma cards) */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* 4. Keep the card content padding consistent */
+.card__content {
+  padding: 1rem 1rem 1.5rem; /* ↑ uniform top/right/left + extra bottom padding */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 5. Adjust the title/text spacing to match Figma hierarchy */
+.card__title {
+  font-size: 1.5rem;        /* ≈24px—adjust to match Figma’s heading size */
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.card__text {
+  font-size: 1rem;          /* 16px standard */
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+
+/* 6. Tweak the button so it sits flush at the bottom of each card */
+.card .button {
+  align-self: center;
+  margin-top: auto;         /* pushes the button to the bottom if text is short */
+}
+
+
+/* 7. (Optional) Make the cards narrower on large screens if desired */
+
+
+
+/* ===================================================================
+   6. CASE STUDY LAYOUT (SilentAid)
+   =================================================================== */
+.case-page {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.case-hero {
+  padding: 3rem 0 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.case-hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7f9 100%);
+  border: 1px solid var(--color-brown);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.25rem;
+}
+
+.case-badge {
+  display: inline-block;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-blue);
+  margin-bottom: 0.75rem;
+}
+
+.case-title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.case-lead {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-subtitle {
+  font-size: 1rem;
+  color: #3b4144;
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5e4934;
+  margin-bottom: 0.25rem;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  color: var(--color-dark);
+}
+
+.case-nav {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.case-nav a {
+  display: inline-block;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-blue);
+  transition: all 0.15s ease-in-out;
+}
+
+.case-nav a:hover,
+.case-nav a:focus {
+  background-color: transparent;
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(41, 104, 123, 0.35);
+}
+
+.case-section {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-brown);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem 1.75rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.case-section:first-of-type {
+  margin-top: 1.25rem;
+}
+
+.case-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.case-section h3 {
+  font-size: 1.15rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.case-media {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.case-caption {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-top: 0.6rem;
+}
+
+.case-section p,
+.case-section li {
+  font-size: 1rem;
+}
+
+.image-placeholder {
+  border-radius: 10px;
+  border: 1px dashed #9b9b9b;
+  background-color: #f7f8f9;
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #616161;
+  margin-top: 0.5rem;
+}
+
+.quote-box {
+  border-left: 4px solid var(--color-blue);
+  background: #eef5f7;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #2b2b2b;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  color: #5c5c5c;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .case-hero-card {
+    padding: 1.5rem;
+  }
+
+  .case-section {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .case-nav {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .case-nav a {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.85rem;
+  }
+}
+
+/* ===================================================================
+   7. FOOTER
+   =================================================================== */
+.site-footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===================================================================
+   8. UTILITY CLASSES & OVERRIDES
+   =================================================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+img.responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  flex: 1;
+}
+
+/* In case you want your old menu.js toggler to still trigger: */
+.topnav.responsive .nav-links {
+  display: flex !important;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;   /* ≈36px */
+  }
+  h2 {
+    font-size: 1.875rem;  /* ≈30px */
+  }
+  h3 {
+    font-size: 1.5rem;    /* ≈24px */
+  }
+  h4 {
+    font-size: 1.2rem;   /* ≈19px */
+  }
+}
+
+/* Equal height cards */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card__content .btn,
+.card__content a.btn {
+    margin-top: auto;
+}
+
+/* Normalize image heights */
+.card__image {
+    height: 220px;        /* adjust to taste: 180–240px works well */
+    object-fit: cover;
+    width: 100%;
+    border: 1px solid rgba(94, 73, 52, 0.3);
+    border-radius: 10px;
+}
+
+
+

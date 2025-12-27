@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SilentAid UX case study — discreet safety tool concept for domestic violence situations.">
+  <title>SilentAid – UX Case Study | Paul Vasholz</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="portstyle.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <div id="main">
+    <nav class="site-nav">
+      <div class="container-fluid">
+        <a href="portfolio.html" class="site-logo">
+          <img src="images/logo13.png" alt="Logo">
+        </a>
+
+        <span class="icon" onclick="toggleMenu()">☰</span>
+
+        <ul class="nav-links">
+          <li><a href="portfolio.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="education.html" class="nav-link">Resume</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <article class="case-page">
+      <section class="case-hero container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="case-hero-card">
+              <span class="case-badge">UX Case Study · Graduate Project</span>
+              <h1 class="case-title">SilentAid</h1>
+              <p class="case-lead">
+                Designing a discreet safety system to help people silently request help during domestic violence situations.
+              </p>
+              <p class="case-subtitle">
+                SilentAid is a phone + smartwatch concept that lets users trigger a hidden alert when it is not safe to speak or
+                openly use their device. This project was completed as part of DePaul's HCI 430 course and focuses on research,
+                prototyping, and iterative design rather than production code.
+              </p>
+
+              <div class="meta-grid">
+                <div>
+                  <div class="meta-label">Role</div>
+                  <div class="meta-value">Focused on writing, research, and testing.  Figma contributor</div>
+                </div>
+                <div>
+                  <div class="meta-label">Team</div>
+                  <div class="meta-value">4-person UX team ("The Fantastic Four")</div>
+                </div>
+                <div>
+                  <div class="meta-label">Timeline</div>
+                  <div class="meta-value">10 weeks (HCI 430)</div>
+                </div>
+                <div>
+                  <div class="meta-label">Tools</div>
+                  <div class="meta-value">Figma, Maze, Zoom, paper sketching</div>
+                </div>
+              </div>
+
+              <ul class="case-nav">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#users">Users &amp; Insights</a></li>
+                <li><a href="#goals">Design Goals</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="#design">Final Design</a></li>
+                <li><a href="#contributions">My Role</a></li>
+                <li><a href="#learning">Lessons</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container pb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <section id="problem" class="case-section">
+              <h2>The Problem</h2>
+              <p>
+                Many people living with domestic violence cannot safely use typical emergency tools. Unlocking a phone,
+                speaking aloud, or opening an obvious safety app can draw attention and increase risk.
+              </p>
+              <p>Existing apps often:</p>
+              <ul>
+                <li>are easy to spot on a device,</li>
+                <li>require multiple steps under stress,</li>
+                <li>lack smartwatch support, and</li>
+                <li>do not account for device monitoring by an abuser.</li>
+              </ul>
+              <p>
+                SilentAid is meant to give users a quieter option: a disguised app with simple, memorable triggers that can be used
+                on a phone or watch, even when someone is watching.
+              </p>
+            </section>
+
+            <section id="users" class="case-section">
+              <h2>Users &amp; Research Insights</h2>
+              <p>
+                Our research started with a review of existing safety apps and common device-control behaviours in domestic violence
+                situations. From there, we developed personas and scenarios to ground our design decisions.
+              </p>
+
+              <h3>Personas</h3>
+              <ul>
+                <li><strong>Survivor:</strong> Needs a discreet way to get help without being detected.</li>
+                <li><strong>Trusted Contact:</strong> Receives alerts and decides how to respond.</li>
+                <li><strong>Responder:</strong> A police officer or social worker who needs clear, actionable information.</li>
+                <li><strong>Supportive Partner / Friend:</strong> Helps with safe setup and practice when appropriate.</li>
+              </ul>
+
+          <h3>Key Insights</h3>
+          <ul>
+            <li>Alert triggers must be simple enough to use under stress.</li>
+            <li>The app should be easily disguised as something ordinary.</li>
+            <li>Watch-based activation provides a useful backup when the phone is not reachable.</li>
+            <li>Helpers need quick access to location and level of urgency, not long explanations.</li>
+            <li>Setup has to be as straightforward as possible to avoid mistakes.</li>
+          </ul>
+
+          <div class="case-media mt-3">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img src="mb1.png" alt="SilentAid moodboard option 1" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col-md-6">
+                <img src="mb2.png" alt="SilentAid moodboard option 2" class="img-fluid rounded border" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+
+            <section id="goals" class="case-section">
+              <h2>Design Goals</h2>
+
+              <h3>Safety</h3>
+              <ul>
+                <li>Allow silent, discreet activation.</li>
+                <li>Minimise visible signs that the app is a safety tool.</li>
+                <li>Avoid interactions that require speaking or complex navigation.</li>
+              </ul>
+
+              <h3>Usability</h3>
+              <ul>
+                <li>Keep setup short and clear.</li>
+                <li>Use triggers that can be practised and remembered.</li>
+                <li>Provide enough feedback to show an alert was sent, without being obvious.</li>
+              </ul>
+
+              <h3>System</h3>
+              <ul>
+                <li>Support phone + smartwatch as a pair.</li>
+                <li>Offer different views for survivors, trusted contacts, and responders.</li>
+                <li>Allow room to expand to more triggers or notification styles later.</li>
+              </ul>
+            </section>
+
+            <section id="process" class="case-section">
+              <h2>Prototyping Process</h2>
+              <p>
+                We started with rough sketches and only increased fidelity as we gained confidence in the core
+                concept.
+              </p>
+
+          <h3>1. Lo-Fi Sketches</h3>
+          <p>We sketched possible disguises, trigger ideas, and flows for:</p>
+          <ul>
+            <li>First-time setup</li>
+            <li>Adding emergency contacts</li>
+            <li>Watch pairing and practice</li>
+            <li>What each user type sees when an alert is triggered</li>
+          </ul>
+          <div class="case-media mt-2">
+            <img src="loFi.png" alt="Lo-fi sketches for SilentAid flows" class="img-fluid rounded border" loading="lazy">
+          </div>
+
+          <h3>2. Mid-Fidelity Prototype (Figma)</h3>
+          <ul>
+            <li>Onboarding and app disguise selection</li>
+            <li>Emergency-contact setup</li>
+            <li>Watch pairing steps</li>
+            <li>Practice flows for the activation gesture</li>
+            <li>Basic views for friends and responders</li>
+          </ul>
+          <div class="case-media mt-2">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+              <div class="col">
+                <img src="midFi1.png" alt="Mid-fi prototype screens showing setup flow" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="midFi2.png" alt="Mid-fi prototype screens showing alert and disguise flow" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="midFi3.png" alt="Mid-fi prototype screens showing training flow" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="midFi4.png" alt="Mid-fi prototype screens showing helper views" class="img-fluid rounded border" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+
+            <section id="testing" class="case-section">
+              <h2>Usability Testing</h2>
+              <p>
+                We tested the mid-fi prototype with five participants using a mix of Zoom-based sessions and in-person testing.
+                I wrote the testing protocol and helped moderate and analyse sessions.
+              </p>
+
+              <h3>Tasks</h3>
+              <ul>
+                <li>Install and set up SilentAid for the first time.</li>
+                <li>Select a disguise for the app.</li>
+                <li>Pair the smartwatch to the app.</li>
+                <li>Learn and practise the activation gesture.</li>
+                <li>Interpret what happens on the "helper" side when an alert is sent.</li>
+              </ul>
+
+              <h3>Key Findings</h3>
+              <ul>
+                <li>Several participants were unsure how watch activation worked based on the mid-fi screens.</li>
+                <li>The practice screens for the the trigger gesture needed clearer guidance.</li>
+                <li>Users wanted more disguise options to better match the kinds of apps they usually have.</li>
+                <li>The emergency-contact setup flow was generally easy to complete.</li>
+                <li>Multiple participants said the concept felt realistic and "could save lives."</li>
+              </ul>
+
+              <div class="quote-box">
+                "I'm surprised something like this doesn't already exist. It seems like it could save someone's life."
+              </div>
+
+              <p>
+                Maze was used for some of the online tasks, but we ran into issues with stability on mobile devices.
+                If we continued this project, we would test future prototypes on multiple devices before relying on that
+                platform again.
+              </p>
+            </section>
+
+            <section id="design" class="case-section">
+              <h2>Hi-Fidelity Design</h2>
+              <p>
+                We used the results of testing to refine our design in a hi-fi Figma prototype. My contributions at this stage
+                focused on writing, clarity, and reviewing screens for consistency.
+              </p>
+
+          <h3>Key Changes in the Hi-Fi Prototype</h3>
+          <ul>
+            <li><strong>Disguises:</strong> Expanded from a small set to eleven options, based on feedback.</li>
+            <li><strong>Watch Activation:</strong> Reworked instructions and flow so it is clearer how to trigger an alert and what happens next.</li>
+            <li><strong>Alert Views:</strong> Shortened text and made severity levels more obvious to helpers.</li>
+            <li><strong>Visual Style:</strong> Applied a calm visual language using soft purples, navy, and neutrals from the moodboard.</li>
+          </ul>
+
+          <div class="case-media mt-2">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+              <div class="col">
+                <img src="highFi1.png" alt="Hi-fi screen showing disguise selection" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="highFi2.png" alt="Hi-fi screen showing watch activation training" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="highFi3.png" alt="Hi-fi screen showing alert view for helpers" class="img-fluid rounded border" loading="lazy">
+              </div>
+              <div class="col">
+                <img src="highFi4.png" alt="Hi-fi screen showing emergency contact setup" class="img-fluid rounded border" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+
+            <section id="contributions" class="case-section">
+              <h2>My Contributions</h2>
+              <p>
+                SilentAid was a group project, but my main contributions included:
+              </p>
+              <ul>
+                <li>Wrote the usability testing protocol and task descriptions.</li>
+                <li>Edited written work for clarity, tone, and consistency.</li>
+                <li>Contributed to mid-fi and hi-fi Figma screens (especially text and flow descriptions).</li>
+                <li>Helped moderate and observe testing sessions (Zoom and in person).</li>
+                <li>Analysed participant feedback and summarised key findings for design changes.</li>
+                <li>Helped manage the overall narrative of the final deliverables.</li>
+              </ul>
+            </section>
+
+            <section id="learning" class="case-section">
+              <h2>What I Learned</h2>
+              <p>
+                This project reinforced a few key lessons for me:
+              </p>
+              <ul>
+                <li>Start with simple, low-fidelity prototypes to keep ideas flexible.</li>
+                <li>Designing for high-risk situations requires careful thought about what can realistically be used under stress.</li>
+                <li>Clear test protocols and task wording matter as much as the prototype itself in usability studies.</li>
+                <li>Cross-device experiences (phone + watch) add complexity but also real value for certain problems.</li>
+                
+              </ul>
+              <p>
+                If this project continued, I would want to do more rounds of testing, especially on the watch flows, and involve
+                more people who work directly in domestic-violence support roles to validate our assumptions.
+              </p>
+            </section>
+
+            <p class="footer-note">
+              This project was completed for HCI 430 (Prototyping &amp; Implementation) at DePaul University and is a concept,
+              not a deployed product.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <footer class="site-footer">
+      <p>© Paul Vasholz | Last Update December 2025</p>
+    </footer>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

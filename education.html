@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Portfolio of Paul Vasholz — HCI student and former political philosopher focusing on UX research, information architecture, and interaction design.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasholz Portfolio</title>
+
+  <!-- Bootstrap (optional; keeps your grid/JS) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Your new custom stylesheet (pulls in Montserrat + all Figma styling) -->
+  <link rel="stylesheet" href="portstyle.css" />
+  <!-- menu.js (your existing JS toggler; unchanged) -->
+  <script src="menu.js" defer></script>
+</head>
+
+<body onresize="showBrowserSize();" onload="showBrowserSize();">
+  <div id="main">
+    <!-- =======================
+         NAVIGATION
+         ======================= -->
+    <nav class="site-nav">
+      <div class="container-fluid">
+        <!-- Logo on the left -->
+        <a href="portfolio.html" class="site-logo">
+          <img
+            src="images/logo13.png"
+            alt="Logo"
+          />
+        </a>
+
+        <!-- "Hamburger" icon for mobile, triggered by menu.js -->
+        <span class="icon" onclick="toggleMenu()">☰</span>
+
+        <!-- Nav links on the right -->
+        <ul class="nav-links">
+          <li>
+            <a href="portfolio.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="projects.html" class="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="education.html" class="nav-link active">Resume</a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+            <div class="resume-wrapper mx-auto">
+    <!-- Page Header + Download Button -->
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <h1 class="mb-0">Paul Vasholz Resume</h1>
+      
+    </div>
+    <div class="text-center mb-5">
+    <a href="VasholzResume.pdf" 
+       class="button"
+       target="_blank">
+       Download PDF
+    </a>
+</div>
+
+    <!-- EDUCATION -->
+    <div class="section-header mb-4">Education</div>
+    <div class="row mb-5">
+      <div class="col-md-3 text-muted">
+        <p><strong>2026 (Anticipated) </strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">M.S., Human Computer Interaction</h5>
+        <p class="mb-0">DePaul University</p>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>2019</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Masters of Information</h5>
+        <p class="mb-2">Rutgers University</p>
+        <ul class="list-unstyled mb-0">
+          <li>Concentrations: Library &amp; Information Science; Data Science</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>2011</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Ph.D., Political Science</h5>
+        <p class="mb-2">Northern Illinois University</p>
+        <ul class="list-unstyled mb-0">
+          <li>Concentrations: Political Philosophy; Politics &amp; the Life Sciences</li>
+          <li>Dissertation: Free Will, Neuroscience, and Political Philosophy</li>
+          <li>Committee: Larry Arnhart (chair), Andrea Bonnicksen, Rebecca Hannagan</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>2007</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">M.A., Political Science</h5>
+        <p class="mb-0">Marquette University</p>
+        <ul class="list-unstyled mb-0">
+          <li>Concentrations: Political Philosophy; Comparative Politics</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>2002</strong></p>
+      </div>
+      <div class="col-md-9">
+        <h5 class="mb-1">B.A., History</h5>
+        <p class="mb-0">Marquette University</p>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section-header mb-4">Work Experience</div>
+    <div class="row mb-5">
+      <div class="col-md-3 text-muted">
+        <p><strong>Dec 2022‑Present</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Data &amp; Public Policy Advisor</h5>
+        <p class="mb-2">Inner Journey Consulting, Milwaukee, WI</p>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1">Identify and pursue grant opportunities</li>
+          <li>Manage data and technological needs of the organization</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>May 2013‑Present</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Courier</h5>
+        <p class="mb-2">CS Logistics, Milwaukee, WI</p>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1">Pickup and deliver assigned orders</li>
+          <li>Ensure paperwork complies with government regulations</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted">
+        <p><strong>Mar 2016‑Mar 2017</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">English Teacher</h5>
+        <p class="mb-2">EF Education First, Shanghai, China</p>
+        <ul class="list-unstyled mb-0">
+          <li>Courses: Beginner to Advanced English for Adults</li>
+        </ul>
+      </div>
+      
+      <div class="col-md-3 text-muted">
+        <p><strong>Sept 2013‑May 2014</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Lecturer</h5>
+        <p class="mb-2">University of Wisconsin Colleges: Sheboygan and Manitowoc Campuses</p>
+        <ul class="list-unstyled mb-0">
+          <li>Courses: American Politics and Government, Politics of Crime and Punishment, Public Policy: Power, Conflict, and Choice</li>
+        </ul>
+      </div>
+      
+
+      <div class="col-md-3 text-muted">
+        <p><strong>Jan 2013‑Jun 2013</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Adjunct Assistant Professor</h5>
+        <p class="mb-2">Marquette University, Milwaukee, WI</p>
+        <ul class="list-unstyled mb-0">
+          <li>Course: War, Empire, and Ethics</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 text-muted"> 
+        <p><strong>Aug 2007‑Jun 2010</strong></p>
+      </div>
+      <div class="col-md-9 mb-4">
+        <h5 class="mb-1">Graduate Assistant</h5>
+        <p class="mb-2">Northern Illinois University, DeKalb, IL</p>
+        <ul class="list-unstyled mb-0">
+          <li>Courses: Introduction to American Government, Introduction to Political Philosophy</li>
+        </ul>
+      </div>
+
+      
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section-header mb-4">Publications</div>
+    <ul class="list-group mb-5">
+      <li class="list-group-item border-0 px-0">
+        <p class="mb-0">
+          <span class="fw-bold">2016</span> Review of Avi Tuschmann's <em>Our Political Nature</em>, 
+          <span class="fst-italic">Politics and the Life Sciences</span>, 35(1), pp 77–78.
+        </p>
+      </li>
+    </ul>
+
+    <!-- CONFERENCE PRESENTATIONS -->
+    
+<div class="section-header mb-4">Conference Presentations</div>
+<div class="row mb-4">
+  <!-- Date column -->
+  <div class="col-md-3 text-muted">
+    <p><strong>October 10–11, 2014</strong></p>
+  </div>
+  <!-- Details column -->
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Finding the Political Balance to Facilitate Free Will."</strong>
+      Free Will Conference, Center for Cognition and Neuroethics, Flint, MI.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>April 11–14, 2013</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Tolerating God."</strong>
+      Midwest Political Science Association Conference, Chicago, IL.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>November 10–11, 2011</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Neurodynamics, Philosophy, and Free Will."</strong>
+      Annual Meeting of the International Neuroethics Society, Washington, DC.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>October 14–16, 2010</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Neurodynamics and Politics."</strong>
+      Association for Politics and the Life Sciences Conference, Bloomington, IN.
+    </p>
+  </div>
+</div>
+
+<div class="section-header mb-4">Conference Participation</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>March 08, 2025</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Awakening Mythic Wisdom for Individual and Community Renewal"</strong>
+      CG Jung Institute of Chicago, Chicago, IL.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>May 19, 2023</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Opening the Closed Heart: A New Look at Jungian Depth Psychology in Light of Trauma, Affect‑theory, and Defense."</strong>
+      CG Jung Institute of Chicago, Chicago, IL.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>March 18, 2023</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Entering the Magical Realm: Enchantment, Wonder, and the Way of Marie‑Louise von Franz."</strong>
+      CG Jung Institute of Chicago, Chicago, IL.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>September 26–28, 2022</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Cosmos Community Conference II."</strong>
+      Medellin, Colombia.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>November 5–6, 2021</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Cosmos Community Conference."</strong>
+      Lisbon, Portugal.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>August 21, 2021</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Philanthropy Summit 2021."</strong>
+      Sandclock.org (virtual).
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>June 20–25, 2019</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"American Library Association Annual Conference."</strong>
+      Washington, DC.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>April 3–6, 2014</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Midwest Political Science Association Conference."</strong>
+      Chicago, IL.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>January 24, 2014</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>"Faculty Development Conference."</strong>
+      University of Wisconsin–Green Bay, Green Bay, WI.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>June 8, 2012</strong></p>
+  </div>
+  <div class="col-md-9">
+    <p class="mb-0">
+      <strong>"Restorative Justice Conference."</strong>
+      Marquette University Law School, Milwaukee, WI.
+    </p>
+  </div>
+</div>
+
+<div class="section-header mb-4">Honors and Awards</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>2011</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>Thomas C. Wiegele Interdisciplinary Dissertation Completion Award</strong>, NIU
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>2010</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>Dissertation Facilitation Award</strong>, Northern Illinois University
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>2007 – 10</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>Graduate Assistantship</strong>, Northern Illinois University
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>Summer 2006</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      <strong>Research Assistantship</strong>, Marquette University
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>2002</strong></p>
+  </div>
+  <div class="col-md-9">
+    <p class="mb-0">
+      <strong>Matthews Scholarship</strong>, Marquette University
+    </p>
+  </div>
+</div>
+
+<div class="section-header mb-4">Professional Service</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>Volunteer</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      Wauwatosa Public Library, Summer 2017
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>Discussant</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      Midwest Political Science Association Conference, 2014
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>Panel Chair</strong></p>
+  </div>
+  <div class="col-md-9 mb-3">
+    <p class="mb-0">
+      Midwest Political Science Association Conference, 2013
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3 text-muted">
+    <p><strong>Manuscript Reviewer</strong></p>
+  </div>
+  <div class="col-md-9">
+    <p class="mb-0">
+      American Political Science Review
+    </p>
+  </div>
+</div>
+
+
+<div class="section-header mb-4">Computer Skills</div>
+
+<div class="row mb-5">
+  <!-- Left column: section label -->
+  <div class="col-md-3 text-muted">
+    <p><strong>Skills</strong></p>
+  </div>
+
+  <!-- Right column: split skills into two sub‑columns -->
+  <div class="col-md-9">
+    <div class="row">
+      <!-- First half of skills -->
+      <div class="col-sm-6">
+        <ul class="list-unstyled mb-0">
+          <li>R</li>
+          <li>Python</li>
+          <li>MySQL</li>
+          <li>Tableau</li>
+        </ul>
+      </div>
+      <!-- Second half of skills -->
+      <div class="col-sm-6">
+        <ul class="list-unstyled mb-0">
+          <li>SPSS</li>
+          <li>Figma</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Continue similarly for "Conference Participation," "Honors & Awards," etc. -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© Paul Vasholz | Last Update December 2025</p>
+  </footer>
+</body>
+</html>

@@ -664,10 +664,14 @@ article {
 .card__image {
     height: 220px;        /* adjust to taste: 180–240px works well */
     object-fit: cover;
+.section-header {
+  text-align: center;
+}
     width: 100%;
     border: 1px solid rgba(94, 73, 52, 0.3);
     border-radius: 10px;
 }
+
 
 
 

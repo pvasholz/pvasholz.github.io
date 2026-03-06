@@ -301,72 +301,59 @@ a:focus {
 /* ===================================================================
    5. CARDS / PROJECT PREVIEWS
    =================================================================== */
-/* ──────────────────────────────────────────────────────────────
-   UPDATE: CARD STYLING TO MATCH FIGMA DESIGN
-   ────────────────────────────────────────────────────────────── */
 
-/* 1. Make the image a fixed (smaller) height and crop it */
-.card__image {
-  width: 100%;
-  height: 300px;           /* ↓ adjust this to your Figma height (e.g. 160px) */
-  object-fit: cover;       /* crops/centers the image within that box */
-  border: 1px solid rgba(94, 73, 52, 0.3);
-  margin-bottom: 1rem;
-  border-radius: 10px;
-}
-
-/* 2. Refine the overall card container */
 .card {
   background-color: var(--color-white);
   border: 1px solid var(--color-brown);
-  border-radius: 12px;     /* ↑ larger radius to match Figma’s rounded corners */
-  overflow: hidden;        /* ensures border-radius clips the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* ↑ a bit stronger shadow */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
-  transition: transform 0.15s ease-in-out;
-  max-width: 500px; /* ↑ set a max-width to match Figma’s card width */
+  height: 100%;
+  max-width: 500px;
   margin: 0 auto;
-  
+  transition: transform 0.15s ease-in-out;
 }
 
-/* 3. Add a hover “lift” effect (very common in Figma cards) */
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
 
-/* 4. Keep the card content padding consistent */
+.card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: 1px solid rgba(94, 73, 52, 0.3);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
 .card__content {
-  padding: 1rem 1rem 1.5rem; /* ↑ uniform top/right/left + extra bottom padding */
+  padding: 1rem 1rem 1.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-/* 5. Adjust the title/text spacing to match Figma hierarchy */
 .card__title {
-  font-size: 1.5rem;        /* ≈24px—adjust to match Figma’s heading size */
+  font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .card__text {
-  font-size: 1rem;          /* 16px standard */
+  font-size: 1rem;
   font-weight: 400;
   margin-bottom: 1rem;
   color: var(--color-dark);
 }
 
-/* 6. Tweak the button so it sits flush at the bottom of each card */
 .card .button {
   align-self: center;
-  margin-top: auto;         /* pushes the button to the bottom if text is short */
+  margin-top: auto;
 }
-
-
-/* 7. (Optional) Make the cards narrower on large screens if desired */
 
 
 
@@ -671,6 +658,7 @@ article {
     border: 1px solid rgba(94, 73, 52, 0.3);
     border-radius: 10px;
 }
+
 
 
 

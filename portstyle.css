@@ -465,7 +465,7 @@ a:focus {
 }
 
 .case-section:first-of-type {
-  margin-top: 1.25rem;
+  margin-top: 0;
 }
 
 .case-section h2 {
@@ -537,7 +537,7 @@ a:focus {
 
 @media (min-width: 1200px) {
   .case-nav {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
 

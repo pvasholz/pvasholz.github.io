@@ -9,7 +9,7 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISvWaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   >
   <link rel="stylesheet" href="portstyle.css">
@@ -19,14 +19,14 @@
   <div id="main">
     <nav class="site-nav">
       <div class="container-fluid">
-        <a href="index.html" class="site-logo">
+        <a href="portfolio.html" class="site-logo">
           <img src="images/logo13.png" alt="Logo">
         </a>
 
-        <span class="icon" onclick="toggleMenu()">☰</span>
+        <span class="icon" role="button" tabindex="0" aria-label="Toggle navigation menu" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">☰</span>
 
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="portfolio.html" class="nav-link">Home</a></li>
           <li><a href="projects.html" class="nav-link active">Projects</a></li>
           <li><a href="education.html" class="nav-link">Resume</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -68,7 +68,6 @@
               </div>
 
               <ul class="case-nav">
-                <li><a href="#paper">Paper</a></li>
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#background">Background</a></li>
                 <li><a href="#methodology">Methodology</a></li>
@@ -76,35 +75,11 @@
                 <li><a href="#framework">Framework</a></li>
                 <li><a href="#implications">Implications</a></li>
                 <li><a href="#limitations">Limitations</a></li>
-                
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section class="container pb-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      <section id="paper" class="case-section">
-        <h2>Paper</h2>
-
-          <div class="d-flex flex-wrap gap-2">
-            <a class="button" href="/papers/ariel_paper_minimal_revision.pdf" target="_blank" rel="noopener">
-              Download PDF
-            </a>
-
-            <a class="button button--secondary" href="https://zenodo.org/records/18285121" target="_blank" rel="noopener">
-              Zenodo record (DOI)
-            </a>
-          </div>
-
-          <p class="mt-3 mb-0" style="font-size: 0.95rem;">
-          Comments welcome—especially replication attempts or counterexamples. Email: pvasholz [at] gmail [dot] com.
-          </p>
-      </section>
-    </div>
-  </div>
-</section>
 
       <section class="container pb-5">
         <div class="row justify-content-center">
@@ -380,7 +355,7 @@
               This research was developed in conversation with Claude (Anthropic) and ChatGPT-5 (OpenAI), which assisted with literature review, argument refinement, and drafting. The author is solely responsible for the claims and conclusions.
             </p>
             <p class="footer-note">
-              This is independent research conducted outside institutional affiliation. For questions or collaboration, contact me</span></a>.
+              This is independent research conducted outside institutional affiliation. For questions or collaboration, contact <a href="/cdn-cgi/l/email-protection#a5d5d3c4d6cdcac9dfe5c1c0d5c4d0c98bc0c1d0"><span class="__cf_email__" data-cfemail="3040465143585f5c4a7054554051455c1e555445">[email&#160;protected]</span></a>.
             </p>
           </div>
         </div>
@@ -388,8 +363,10 @@
     </article>
 
     <footer class="site-footer">
-      <p>© Paul Vasholz | Last Update March 2026</p>
+      <p>© Paul Vasholz | Last Update December 2025</p>
     </footer>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></scri
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

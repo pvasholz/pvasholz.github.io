@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research design case study on cross-cultural user evaluation of epistemic closure in AI responses.">
+  <title>Epistemic Closure in AI Responses – Research Case Study | Paul Vasholz</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="portstyle.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <div id="main">
+    <nav class="site-nav">
+      <div class="container-fluid">
+        <a href="index.html" class="site-logo">
+          <img src="images/logo13.png" alt="Logo">
+        </a>
+
+        <span class="icon" role="button" tabindex="0" aria-label="Toggle navigation menu" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMenu();}">☰</span>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="education.html" class="nav-link">Resume</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <article class="case-page">
+      <section class="case-hero container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="case-hero-card">
+              <span class="case-badge">Research Design · Cross-cultural HCI</span>
+              <h1 class="case-title">Cross-cultural User Evaluation of Epistemic Closure in AI Responses</h1>
+              <p class="case-lead">
+                A research design built around a simple question: when an AI answers a morally ambiguous question, do users want it to resolve the ambiguity or leave it intact—and does that preference differ between Chinese and American college students?
+              </p>
+              <p class="case-subtitle">
+                Language models tend toward definitive answers even when a definitive answer is not the appropriate response. This study treats that tendency as something that can be measured and varied rather than taken for granted, and asks whether the preference for closure holds across cultural contexts or differs between them.
+              </p>
+
+              <div class="meta-grid">
+                <div>
+                  <div class="meta-label">Role</div>
+                  <div class="meta-value">Solo researcher: study design, prompting, literature review, pilot testing, paper writing</div>
+                </div>
+                <div>
+                  <div class="meta-label">Timeline</div>
+                  <div class="meta-value">Winter 2026</div>
+                </div>
+                <div>
+                  <div class="meta-label">Tools</div>
+                  <div class="meta-value">Qwen 3, Ariel-derived prompt constraints, survey design, SIGCHI paper template</div>
+                </div>
+                <div>
+                  <div class="meta-label">Status</div>
+                  <div class="meta-value">Completed course research design</div>
+                </div>
+              </div>
+
+              <ul class="case-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#questions">Questions</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#materials">Materials</a></li>
+                <li><a href="#measures">Measures</a></li>
+                <li><a href="#pilot">Pilot</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container pt-4 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+
+            <section id="overview" class="case-section">
+              <h2>Project Overview</h2>
+              <p>
+                Large language models often present interpretive conclusions with more confidence and finality than the source material justifies. This research design focuses on that tendency as a problem of <strong>epistemic closure</strong>: the model gives the impression that an unclear or debatable issue has been settled, producing a smooth, confident answer that makes the question seem simpler than it really is.
+              </p>
+              <p>
+                The project compares how Chinese and American college students evaluate three kinds of AI responses to morally ambiguous literary prompts: a baseline response, a lightly constrained response, and a heavily constrained response. The goal is not to prove that ambiguity is always better, but to test whether closure itself is culturally preferred, and whether ambiguity-preserving responses can sometimes be perceived as more appropriate.
+              </p>
+              <div class="quote-box">
+                The central question is whether answer quality should always mean resolution — or whether, in some contexts, the better answer is the one that leaves interpretive space intact.
+              </div>
+            </section>
+
+            <section id="questions" class="case-section">
+              <h2>Research Questions and Hypotheses</h2>
+              <h3>Research Questions</h3>
+              <ul>
+                <li>How do users evaluate AI-generated responses that preserve moral or interpretive ambiguity, compared to responses that offer more definitive interpretations?</li>
+                <li>Are there differences between Chinese and American college students in their preferences for ambiguity-preserving versus resolving AI responses?</li>
+                <li>Does familiarity with the source material influence how users perceive the appropriateness or usefulness of ambiguity-preserving interpretations?</li>
+              </ul>
+
+              <h3>Hypotheses</h3>
+              <ul>
+                <li>Users across cultures will be more likely to prefer resolving interpretations.</li>
+                <li>Chinese students will be more likely to prefer ambiguous responses.</li>
+                <li>Those familiar with the source material will be more likely to prefer ambiguous answers.</li>
+              </ul>
+            </section>
+
+            <section id="background" class="case-section">
+              <h2>Background</h2>
+              <p>
+                The project sits at the intersection of cross-cultural HCI, LLM evaluation, and research on ambiguity tolerance. It draws on several strands of literature: work on need for closure and trust, work on cross-cultural differences in desired AI interaction styles, and work on sycophancy and epistemic alignment in language models.
+              </p>
+              <p>
+                Hofstede’s UAI and IDV dimensions are used as background interpretive frameworks rather than primary predictive engines, while work by Nisbett and others provides a more plausible cognitive account of why interpretive tolerance may vary across contexts. The result is a paper that treats culture cautiously, but not superficially.
+              </p>
+
+              <h3>Why this framing mattered</h3>
+              <ul>
+                <li>It shifts the question from factual correctness to answer style.</li>
+                <li>It treats ambiguity as a possible design choice rather than a system failure.</li>
+                <li>It connects Project Ariel’s anti-closure prompting logic to a comparative user-study design.</li>
+              </ul>
+            </section>
+
+            <section id="design" class="case-section">
+              <h2>Study Design</h2>
+              <p>
+                The design uses two morally ambiguous literary prompts and three response conditions generated with Qwen 3. One response is a baseline prompt-only output, one is lightly constrained, and one is heavily constrained using an Ariel-derived anti-closure framework. The lightly constrained condition is shared between participant groups, allowing comparison without forcing every participant to read all three responses.
+              </p>
+
+              <div class="case-media mt-3 mb-3">
+                <table class="table table-bordered" style="font-size: 0.95rem;">
+                  <thead>
+                    <tr>
+                      <th>Condition</th>
+                      <th>Description</th>
+                      <th>Role in Study</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Baseline</strong></td>
+                      <td>Generated from the prompt alone, with no additional Ariel filtering.</td>
+                      <td>Reference condition</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Light Constraint</strong></td>
+                      <td>Minimal ambiguity-preserving constraint intended to reduce premature interpretive closure.</td>
+                      <td>Shared comparison condition</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Heavy Constraint</strong></td>
+                      <td>Stricter anti-closure constraint intended to maximize interpretive openness.</td>
+                      <td>Upper bound ambiguity condition</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                The study uses a between-subjects design. One group reads the baseline and lightly constrained responses; the other reads the lightly constrained and heavily constrained responses. This reduces repetition and cognitive fatigue while still permitting between-group comparison through the shared middle condition.
+              </p>
+            </section>
+
+            <section id="materials" class="case-section">
+              <h2>Texts and Materials</h2>
+              <h3>Selected literary prompts</h3>
+              <ul>
+                <li><strong>Yu Hua, <em>To Live</em></strong>: a man loses his family estate through gambling, and later reflects that this ruin accidentally saved his life during revolutionary violence.</li>
+                <li><strong>Dostoevsky, <em>The Brothers Karamazov</em></strong>: the Grand Inquisitor episode, centered on freedom, authority, bread, mystery, and silence.</li>
+              </ul>
+
+              <p>
+                These texts were chosen because they are morally serious, interpretively open, and culturally asymmetrical in plausible familiarity. The prompts abstract away direct citation of the source so that responses are driven by the scenario, not by the model’s overt literary recognition.
+              </p>
+
+              <div class="quote-box">
+                The goal was not to test literary knowledge, but to test what kinds of answers an AI system produces when the underlying material resists easy synthesis.
+              </div>
+            </section>
+
+            <section id="measures" class="case-section">
+              <h2>Measures</h2>
+              <p>Participants evaluate each response across several dimensions:</p>
+              <ul>
+                <li><strong>Appropriateness</strong> — whether the response fits the question</li>
+                <li><strong>Usefulness</strong> — whether the response is helpful</li>
+                <li><strong>Perceived accuracy</strong> — whether the response seems correct or reliable</li>
+                <li><strong>Preference</strong> — which of the two responses shown is preferred, and how strongly</li>
+                <li><strong>Familiarity</strong> — self-reported familiarity with each source text</li>
+                <li><strong>Trust</strong> — both general trust in AI responses and trust in specific answers</li>
+                <li><strong>Demographics</strong> — including cultural background</li>
+              </ul>
+            </section>
+
+            <section id="pilot" class="case-section">
+              <h2>Pilot and Analysis Plan</h2>
+              <p>
+                A pilot study helped refine the structure of the evaluation, especially the decision not to show all three responses to every participant. That pilot suggested that reading all conditions for both texts would create fatigue and repetitiveness, especially given the length and density of the responses.
+              </p>
+              <p>
+                The proposed analysis uses a mixed-design ANOVA with constraint pairing and cultural group as between-subjects factors and text as a within-subjects factor. Key comparisons are then checked with a more assumption-light analysis to ensure the results are robust. Any group differences are interpreted using Hofstede’s UAI/IDV as background frameworks rather than as strict predictive rules.
+              </p>
+            </section>
+
+            <section id="reflection" class="case-section">
+              <h2>Reflection</h2>
+              <p>
+                This project began as a course assignment but became useful as a bridge between Project Ariel and a more conventional HCI research design. What made it valuable was not just the topic, but the pressure it placed on several open questions at once: how to evaluate answer style, how to compare cultural preferences without flattening them into stereotypes, and how to translate a private design probe into a public research instrument.
+              </p>
+              <p>
+                The portfolio version is also a reminder that some of the most interesting AI design questions are not about whether a model can produce an answer, but about whether it knows when resolution is the wrong move.
+              </p>
+
+              <h3>What I would improve next</h3>
+              <ul>
+                <li>Tighten the measures, especially the distinction between trust and perceived accuracy.</li>
+                <li>Test the design with multiple base models rather than a single selected model.</li>
+                <li>Refine the public-facing writeup to make the cultural-theory claims more conservative than the deadline version of the class paper.</li>
+                <li>Turn the instrument into a cleaner downloadable appendix or companion PDF.</li>
+              </ul>
+            </section>
+
+            <section class="case-section">
+              <h2>Project Files</h2>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="button" href="/papers/Vasholz_HCI514_Paper.pdf" target="_blank" rel="noopener">Download Paper</a>
+                <a class="button button--secondary" href="projects.html">Back to Projects</a>
+              </div>
+            </section>
+
+            <p class="footer-note">
+              This research was developed in conversation with Claude (Anthropic) and ChatGPT-5 (OpenAI), which assisted with literature review, argument refinement, and drafting. The author is solely responsible for the claims and conclusions.
+            </p>
+            <p class="footer-note">
+              This page adapts a course research design into a portfolio case-study format.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <p>© Paul Vasholz | Last Update March 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

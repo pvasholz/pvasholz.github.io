@@ -651,12 +651,74 @@ article {
 .card__image {
     height: 220px;        /* adjust to taste: 180–240px works well */
     object-fit: cover;
-.section-header {
-  text-align: center;
-}
     width: 100%;
     border: 1px solid rgba(94, 73, 52, 0.3);
     border-radius: 10px;
+}
+
+.section-header {
+  text-align: center;
+}
+
+/* ===================================================================
+   RESUME: SHORT / FULL TOGGLE
+   =================================================================== */
+.resume-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resume-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-blue);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.resume-toggle__option {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.resume-toggle__option + .resume-toggle__option {
+  border-left: 1px solid var(--color-blue);
+}
+
+.resume-toggle__option[aria-pressed="true"] {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.resume-toggle__option[aria-pressed="false"]:hover {
+  background-color: rgba(41, 104, 123, 0.1);
+}
+
+.resume-toggle__option:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: -4px;
+}
+
+.resume--short .full-only {
+  display: none !important;
+}
+
+.resume-more {
+  display: none;
+  border-top: 1px solid rgba(94, 73, 52, 0.2);
+  padding-top: 2rem;
+}
+
+.resume--short .resume-more {
+  display: block;
 }
 
 

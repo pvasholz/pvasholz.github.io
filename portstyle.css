@@ -656,8 +656,16 @@ article {
     border-radius: 10px;
 }
 
+/* Resume section labels: small caps label with a thin rule */
 .section-header {
-  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-blue);
+  border-bottom: 1px solid rgba(94, 73, 52, 0.25);
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 /* ===================================================================
@@ -725,3 +733,15 @@ article {
 
 
 
+
+/* Links in the dark footer */
+.site-footer a {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #d9c2a7;
+}

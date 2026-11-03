@@ -1,0 +1,57 @@
+
+/* Accessible Navbar Overrides */
+/* Define high‑contrast color variables */
+:root {
+    --nav-bg: #c0392b;           /* deep red background */
+    --nav-text: #ecf0f1;         /* very light text */
+    --nav-active-bg: #ecf0f1;    /* light background for active/hover */
+    --nav-active-text: #c0392b;  /* deep red text for active/hover */
+  }
+  
+  /* 1. Navbar background */
+  nav.navbar {
+    background-color: var(--nav-bg) !important;
+  }
+  
+  /* 2. Default link color */
+  nav.navbar .nav-link,
+  nav.navbar .navbar-brand {
+    color: var(--nav-text) !important;
+  }
+  
+  /* 3. Hover & focus state */
+  nav.navbar .nav-link:hover,
+  nav.navbar .nav-link:focus {
+    background-color: var(--nav-active-bg) !important;
+    color: var(--nav-active-text) !important;
+    border-radius: 0.25rem;
+  }
+  
+  /* 4. “Active” link (current page) */
+  nav.navbar .nav-link.active {
+    background-color: var(--nav-active-bg) !important;
+    color: var(--nav-active-text) !important;
+    border-radius: 0.25rem;
+    font-weight: bold;
+  }
+body {
+      background-color: #f8f9fa;
+    }
+    .clickable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .clickable-img:hover {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+    .clickable-img.enlarged {
+      transform: scale(1.5);
+      cursor: zoom-out;
+    }
+    main.container {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    }  

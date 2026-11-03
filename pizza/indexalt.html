@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Course</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .clickable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .clickable-img:hover {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+    .clickable-img.enlarged {
+      transform: scale(1.5);
+      cursor: zoom-out;
+    }
+    main.container {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="bg-white py-5">
+    <div class="container text-center">
+      <h1 class="display-4 mb-3">E‑Learning Pizza Making Course</h1>
+      <p class="lead mb-4">
+        Dive into the history, styles, toppings, and a step‑by‑step demo to make pizzeria‑quality pizza at home.
+      </p>
+      <a href="history.html" class="btn btn-primary btn-lg">Get Started &raquo;</a>
+    </div>
+  </header>
+
+  <!-- How It Works -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">What You’ll Learn</h3>
+      <div class="row g-4">
+        <div class="col-md-3 text-center">
+          <i class="bi bi-clock-history display-4 text-primary"></i>
+          <h5 class="mt-2">History</h5>
+          <p class="text-muted">Origins from Naples to New York.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="bi bi-egg-fry display-4 text-primary"></i>
+          <h5 class="mt-2">Styles</h5>
+          <p class="text-muted">Neapolitan, Chicago, Detroit, & more.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="bi bi-egg-display display-4 text-primary"></i>
+          <h5 class="mt-2">Toppings</h5>
+          <p class="text-muted">Rank and customize your favorite combos.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="bi bi-play-btn-fill display-4 text-primary"></i>
+          <h5 class="mt-2">Demo</h5>
+          <p class="text-muted">Watch a step‑by‑step sausage pizza tutorial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Call‑to‑Action Panel -->
+  <main class="container text-center mb-5">
+    <img
+      id="pizzaImg"
+      src="images/pizza1.jpg"
+      alt="Homemade pizza"
+      class="img-fluid rounded shadow-lg my-4 clickable-img"
+      style="max-width: 300px;"
+    >
+    <p class="mb-4">
+      Thank you for taking this course. If you’re new, follow the modules in order. If you’re returning, use the menu above.
+    </p>
+    <a href="history.html" class="btn btn-secondary btn-lg">Continue to History &raquo;</a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+          &copy; 2025 Paul Vasholz / DePaul University
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+          <a href="#" class="text-white me-3">Privacy Policy</a>
+          <a href="#" class="text-white">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const img = document.getElementById('pizzaImg');
+      img.addEventListener('click', () => {
+        img.classList.toggle('enlarged');
+      });
+    });
+  </script>
+</body>
+</html>

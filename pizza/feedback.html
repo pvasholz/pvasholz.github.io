@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">How to Make a Pizza</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navMenu"
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="styles.html">Styles</a></li>
+                
+                <li class="nav-item"><a class="nav-link" href="demo.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link active" href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main class="container py-5">
+    <h2 class="mb-4">Course Feedback & Quiz Results</h2>
+    <p>Please fill out your demographic info.  Your quiz scores should be already added to the form. If they are not, please add them if you can remember them. If you have any other feedback, please put it in the comments.  Thank you for your participation.</p>
+
+    <!-- Embedded Google Form: replace the src URL with your own form’s URL -->
+    <div class="ratio ratio-4x3">
+      <iframe
+        id="feedbackFormIframe"
+        src=""
+        width="100%"
+        height="100%"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        Loading…>
+      </iframe>
+    </div>
+  </main>
+  
+
+  <footer class="text-center py-3">
+    &copy; 2025 Paul Vasholz / DePaul University
+  </footer>
+  <script src="js/main.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1) Read quiz results from localStorage
+      const historyData   = JSON.parse(localStorage.getItem('tfQuizResults')       || '{}');
+      const stylesPre     = JSON.parse(localStorage.getItem('stylesQuizResults')    || '{}');
+      const stylesPost    = JSON.parse(localStorage.getItem('postStylesQuizResults')|| '{}');
+      const prepPre       = JSON.parse(localStorage.getItem('preMakeQuizResults')    || '{}');
+      const prepPost      = JSON.parse(localStorage.getItem('postMakeQuizResults')   || '{}');
+
+      // Extract scores or default to empty string
+      const historyScore   = historyData.score   != null ? historyData.score.toString()   : '';
+      const stylesPreScore = stylesPre.score    != null ? stylesPre.score.toString()    : '';
+      const stylesPostScore= stylesPost.score   != null ? stylesPost.score.toString()   : '';
+      const prepPreScore   = prepPre.score      != null ? prepPre.score.toString()      : '';
+      const prepPostScore  = prepPost.score     != null ? prepPost.score.toString()     : '';
+    
+    const fieldMap = {
+        historyScoreField:    'entry.690554685',  
+        stylesPreScoreField:  'entry.1092203980',  
+        stylesPostScoreField: 'entry.86329369',  
+        prepPreScoreField:    'entry.1021413743',  
+        prepPostScoreField:   'entry.1971159979'  
+         };
+    
+    const formBaseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd0yoG0ff86TRxQQ0S-19wu-ASwwDlKcrXZoEfdw7qJ11ZY-w/viewform?usp=pp_url';
+    
+     const params = new URLSearchParams({
+           
+        
+        [fieldMap.historyScoreField]:    historyScore,
+        [fieldMap.stylesPreScoreField]:  stylesPreScore,
+        [fieldMap.stylesPostScoreField]: stylesPostScore,
+        [fieldMap.prepPreScoreField]:    prepPreScore,
+        [fieldMap.prepPostScoreField]:   prepPostScore
+      });
+
+      const prefillUrl = formBaseUrl + '&' + params.toString() + '&embedded=true';
+      document.getElementById('feedbackFormIframe').src = prefillUrl;
+    });
+  </script>
+</body>
+</html>

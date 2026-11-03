@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning to Make Pizza</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .mb-4 { margin-bottom: 1.5rem; }
+    #postSubmitMessage { margin-top: 1rem; }
+  </style>
+  
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">How to Make a Pizza</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navMenu"
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="styles.html">Styles</a></li>
+                <li class="nav-item"><a class="nav-link active" href="demo.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main class="container py-5">
+    <h1 class="mb-4">Post‑Lesson Quiz: How I Prepare Pizza</h1>
+    <p>Now that you have seen how I actually prepare the pizza, please take the same quiz again. Then click “Submit.”</p>
+
+    <form id="postMatchForm">
+      <!-- Question 1 -->
+      <div class="mb-4">
+        <p>1. Do you think I will use 00 flour when I make my crust?</p>
+        <select class="form-select" name="q1" required>
+          <option value="" disabled selected>Select Yes or No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="mb-4">
+        <p>2. Do you think I will use San Marzano tomatoes?</p>
+        <select class="form-select" name="q2" required>
+          <option value="" disabled selected>Select Yes or No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="mb-4">
+        <p>3. How many kinds of cheese do you think I will use?</p>
+        <select class="form-select" name="q3" required>
+          <option value="" disabled selected>Select quantity</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5+">5+</option>
+        </select>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="mb-4">
+        <p>4. What temperature will I set the oven at?</p>
+        <select class="form-select" name="q4" required>
+          <option value="" disabled selected>Select temperature</option>
+          <option value="300F">300°F</option>
+          <option value="400F">400°F</option>
+          <option value="500F">500°F</option>
+          <option value="800F">800°F</option>
+        </select>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="mb-4">
+        <p>5. About how long will it take to cook my pizza?</p>
+        <select class="form-select" name="q5" required>
+          <option value="" disabled selected>Select cook time</option>
+          <option value="0-10 minutes">0–10 minutes</option>
+          <option value="10-20 minutes">10–20 minutes</option>
+          <option value="20-30 minutes">20–30 minutes</option>
+          <option value="30+ minutes">30+ minutes</option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-content-start">
+        <button type="button" id="postSubmitBtn" class="btn btn-primary">Submit Answers</button>
+      </div>
+      <div id="postSubmitMessage"></div>
+    </form>
+
+    <div class="d-flex justify-content-between mt-5">
+      <a href="demo6.html" class="btn btn-secondary">&laquo; Previous</a>
+      <a href="demores.html" class="btn btn-primary" id="viewResultsBtn" style="display:none;">View All Results &raquo;</a>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Same correct answers as before
+      const correct = {
+        q1: 'Yes',
+        q2: 'No',
+        q3: '5+',
+        q4: '400F',
+        q5: '20-30 minutes'
+      };
+
+      const postSubmitBtn = document.getElementById('postSubmitBtn');
+      const postSubmitMessage = document.getElementById('postSubmitMessage');
+      const viewResultsBtn = document.getElementById('viewResultsBtn');
+
+      postSubmitBtn.addEventListener('click', () => {
+        const form = document.getElementById('postMatchForm');
+        let score = 0;
+        const userAnswers = {};
+
+        Object.keys(correct).forEach(key => {
+          const select = form.querySelector(`select[name="${key}"]`);
+          const val = select.value;
+          userAnswers[key] = val;
+          if (val === correct[key]) score++;
+        });
+
+        // Save post‑lesson results
+        const postResult = {
+          answers: userAnswers,
+          score: score,
+          total: Object.keys(correct).length
+        };
+        localStorage.setItem('postMakeQuizResults', JSON.stringify(postResult));
+
+        postSubmitBtn.disabled = true;
+        postSubmitMessage.innerHTML = `
+          <div class="alert alert-success" role="alert">
+            Post‑lesson quiz submitted! <br>
+            Click “View All Results »” to see both sets of answers.
+          </div>
+        `;
+        viewResultsBtn.style.display = 'inline-block';
+      });
+    });
+  </script>
+</body>
+</html>

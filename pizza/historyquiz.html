@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History of Pizza</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">How to Make a Pizza</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navMenu"
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="styles.html">Styles</a></li>
+                
+                <li class="nav-item"><a class="nav-link" href="demo.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main class="container py-5">
+    <h2 class="mb-4">Quick True / False Quiz</h2>
+    <form id="tfQuizForm">
+      <!-- Question 1 -->
+      <div class="mb-3">
+        <p>1. The Margherita pizza was named after an Italian queen.</p>
+        <div>
+          <input type="radio" id="q1-true"  name="q1" value="true" />
+          <label for="q1-true">True</label>
+        </div>
+        <div>
+          <input type="radio" id="q1-false" name="q1" value="false" />
+          <label for="q1-false">False</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="mb-3">
+        <p>2. Chicago deep dish pizza was invented in 1920.</p>
+        <div>
+          <input type="radio" id="q2-true"  name="q2" value="true" />
+          <label for="q2-true">True</label>
+        </div>
+        <div>
+          <input type="radio" id="q2-false" name="q2" value="false" />
+          <label for="q2-false">False</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="mb-3">
+        <p>3. The most popular pizza topping in America is Pineapple.</p>
+        <div>
+          <input type="radio" id="q3-true"  name="q3" value="true" />
+          <label for="q3-true">True</label>
+        </div>
+        <div>
+          <input type="radio" id="q3-false" name="q3" value="false" />
+          <label for="q3-false">False</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="mb-3">
+        <p>4. The most popular style of pizza in America is New York style.</p>
+        <div>
+          <input type="radio" id="q4-true"  name="q4" value="true" />
+          <label for="q4-true">True</label>
+        </div>
+        <div>
+          <input type="radio" id="q4-false" name="q4" value="false" />
+          <label for="q4-false">False</label>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <div class="d-flex justify-content-start">
+        <button type="button" id="submitBtn" class="btn btn-primary">
+          Submit &raquo;
+        </button>
+      </div>
+    </form>
+    <div class="d-flex justify-content-between mt-4">
+        <a href="history4.html" class="btn btn-secondary">&laquo; Previous</a>
+        <a href="historyquizres.html" class="btn btn-primary">Next &raquo;</a>
+      </div>
+  </main>
+
+  <!-- (Optional) Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // 1) Define the correct answers for each question
+    const correctAnswers = {
+      q1: true,
+      q2: false,
+      q3: false,
+      q4: true
+    };
+
+    // 2) When the user clicks “Submit”, collect their choices, compute score, save to localStorage, and redirect
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const form = document.getElementById('tfQuizForm');
+      let score = 0;
+      const userAnswers = {};
+
+      // Loop through each question key in correctAnswers
+      Object.keys(correctAnswers).forEach(qKey => {
+        // Find the checked radio button for that name
+        const selected = form.querySelector(`input[name="${qKey}"]:checked`);
+        // If nothing was selected, val stays null
+        const val = selected ? (selected.value === 'true') : null;
+        userAnswers[qKey] = val;
+        // If the user answered exactly the correct boolean, increment score
+        if (val === correctAnswers[qKey]) {
+          score++;
+        }
+      });
+
+      // Package up results: answers object + score + total questions
+      const result = {
+        answers: userAnswers,
+        score: score,
+        total: Object.keys(correctAnswers).length
+      };
+
+      // Save to localStorage under the key 'tfQuizResults'
+      localStorage.setItem('tfQuizResults', JSON.stringify(result));
+
+      // Redirect to results page
+      window.location.href = 'historyquizres.html';
+    });
+  </script>
+  <footer class="text-center py-3">
+    &copy; 2025 Paul Vasholz / DePaul University
+  </footer>
+</body>
+</html>

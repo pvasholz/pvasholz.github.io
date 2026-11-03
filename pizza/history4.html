@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History of Pizza</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .clickable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s;
+    }
+    .clickable-img.enlarged {
+      transform: scale(1.5);
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">How to Make a Pizza</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navMenu"
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="styles.html">Styles</a></li>
+                <li class="nav-item"><a class="nav-link" href="demo.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main class="container mt-4">
+    <h2 class="mt-4">History of Pizza</h2>
+    <img id="pizzaImg" src="images/pizza3.jpg" alt="Slice of New York Style Pizza" class="img-fluid my-4 w-25 d-block mx-auto clickable-img">
+    <p>Chicago deep dish style pizza is believed to have been created in 1941</p>
+    <div class="d-flex justify-content-between mt-4">
+        <a href="history3.html" class="btn btn-secondary">&laquo; Previous</a>
+        <a href="historyquiz.html" class="btn btn-primary">Next &raquo;</a>
+      </div>
+      
+  </main>
+
+    <footer class="text-center py-3">
+    &copy; 2025 Paul Vasholz / DePaul University
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const img = document.getElementById('pizzaImg');
+      img.addEventListener('click', () => {
+        img.classList.toggle('enlarged');
+      });
+    });
+  </script>
+</body>
+</html>

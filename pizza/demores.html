@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning to Make Pizza</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">How to Make a Pizza</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navMenu"
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="styles.html">Styles</a></li>
+                <li class="nav-item"><a class="nav-link active" href="demo.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main class="container py-5">
+    <h2 class="mb-4">Combined Quiz Results</h2>
+
+    <!-- Pre‑Lesson Results -->
+    <h3>Pre‑Lesson Quiz Results</h3>
+    <div id="preResultContainer" class="mb-5"></div>
+
+    <!-- Post‑Lesson Results -->
+    <h3>Post‑Lesson Quiz Results</h3>
+    <div id="postResultContainer"></div>
+
+    <div class="mt-5">
+      <a href="demotest.html" class="btn btn-secondary">&laquo; Previous</a>
+      <a href="feedback.html" class="btn btn-primary">Next &raquo;</a>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const preContainer = document.getElementById('preResultContainer');
+      const postContainer = document.getElementById('postResultContainer');
+
+      // 1) Display Pre‑Lesson Results
+      const storedPre = localStorage.getItem('preMakeQuizResults');
+      if (!storedPre) {
+        preContainer.innerHTML =
+          '<div class="alert alert-warning">No pre‑lesson quiz recorded.</div>';
+      } else {
+        const { answers, score, total } = JSON.parse(storedPre);
+
+        // Define question prompts
+        const questionsPre = {
+          q1: 'Do you think I will use 00 flour when I make my crust?',
+          q2: 'Do you think I will use San Marzano tomatoes?',
+          q3: 'How many kinds of cheese do you think I will use?',
+          q4: 'What temperature will I set the oven at?',
+          q5: 'About how long will it take to cook my pizza?'
+        };
+        const correctPre = {
+          q1: 'Yes',
+          q2: 'No',
+          q3: '5+',
+          q4: '400F',
+          q5: '20-30 minutes'
+        };
+
+        preContainer.innerHTML = `
+          <div class="alert alert-info">
+            Pre‑lesson: You got <strong>${score}</strong> out of <strong>${total}</strong> correct.
+          </div>
+        `;
+        const ulPre = document.createElement('ul');
+        ulPre.className = 'list-group';
+        Object.keys(questionsPre).forEach(key => {
+          const userVal = answers[key];
+          const correctVal = correctPre[key];
+          const wasCorrect = (userVal === correctVal);
+
+          const li = document.createElement('li');
+          li.className = 'list-group-item';
+          li.innerHTML = `
+            <div>${questionsPre[key]}</div>
+            <div>
+              <strong>Your answer:</strong> ${userVal || '<em>None</em>'}<br>
+              <strong>Correct:</strong> ${correctVal}
+              ${wasCorrect
+                ? '<span class="badge bg-success ms-2">✔</span>'
+                : '<span class="badge bg-danger ms-2">✘</span>'}
+            </div>
+          `;
+          ulPre.appendChild(li);
+        });
+        preContainer.appendChild(ulPre);
+      }
+
+      // 2) Display Post‑Lesson Results
+      const storedPost = localStorage.getItem('postMakeQuizResults');
+      if (!storedPost) {
+        postContainer.innerHTML =
+          '<div class="alert alert-warning">No post‑lesson quiz recorded.</div>';
+      } else {
+        const { answers: postAnswers, score: postScore, total: postTotal } =
+          JSON.parse(storedPost);
+
+        // Same prompts/keys as pre‑lesson
+        const questionsPost = {
+          q1: 'Do you think I will use 00 flour when I make my crust?',
+          q2: 'Do you think I will use San Marzano tomatoes?',
+          q3: 'How many kinds of cheese do you think I will use?',
+          q4: 'What temperature will I set the oven at?',
+          q5: 'About how long will it take to cook my pizza?'
+        };
+        const correctPost = {
+          q1: 'Yes',
+          q2: 'No',
+          q3: '5+',
+          q4: '400F',
+          q5: '20-30 minutes'
+        };
+
+        postContainer.innerHTML = `
+          <div class="alert alert-info">
+            Post‑lesson: You got <strong>${postScore}</strong> out of <strong>${postTotal}</strong> correct.
+          </div>
+        `;
+        const ulPost = document.createElement('ul');
+        ulPost.className = 'list-group';
+        Object.keys(questionsPost).forEach(key => {
+          const userVal = postAnswers[key];
+          const correctVal = correctPost[key];
+          const wasCorrect = (userVal === correctVal);
+
+          const li = document.createElement('li');
+          li.className = 'list-group-item';
+          li.innerHTML = `
+            <div>${questionsPost[key]}</div>
+            <div>
+              <strong>Your answer:</strong> ${userVal || '<em>None</em>'}<br>
+              <strong>Correct:</strong> ${correctVal}
+              ${wasCorrect
+                ? '<span class="badge bg-success ms-2">✔</span>'
+                : '<span class="badge bg-danger ms-2">✘</span>'}
+            </div>
+          `;
+          ulPost.appendChild(li);
+        });
+        postContainer.appendChild(ulPost);
+      }
+    });
+  </script>
+</body>
+</html>
